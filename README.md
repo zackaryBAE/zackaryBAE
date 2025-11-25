@@ -47,43 +47,6 @@
 
 ###
 
-name: Generate Pacman
-
-on:
-  schedule:
-    - cron: "0 */24 * * *"
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/pacman-contribution-graph.svg
-            dist/pacman-contribution-graph-dark.svg?palette=github-dark
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-###
-
-<div align="center">
-  <a href="https://open.spotify.com/user/Zack">
-    <img src="https://spotify-recently-played-readme.vercel.app/api?user=YOUR_ACTUAL_USER_ID&count=5&unique=true" alt="Spotify recently played" />
-  </a>
-</div>
+<img src="https://raw.githubusercontent.com/zackaryBAE/zackaryBAE/output/snake.svg" alt="Snake animation" />
 
 ###
